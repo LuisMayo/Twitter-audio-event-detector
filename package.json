@@ -1,0 +1,36 @@
+{
+  "name": "twitter-audio-detector",
+  "version": "1.0.0",
+  "description": "Server that given a tweet URL will return true if the video or audio contains an specific sound event",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisMayo/twitter-audio-event-detector.git"
+  },
+  "keywords": [
+    "twitter",
+    "audio",
+    "event",
+    "detector"
+  ],
+  "author": "LuisMayo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/LuisMayo/twitter-audio-event-detector/issues"
+  },
+  "homepage": "https://github.com/LuisMayo/twitter-audio-event-detector#readme",
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/twitter": "^1.7.0",
+    "express": "^4.17.1",
+    "get-twitter-bearer-token": "^1.0.0",
+    "node-wget-promise": "^0.1.6",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node-wget-promise": "^0.1.0"
+  }
+}

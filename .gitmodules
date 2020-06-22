@@ -1,0 +1,3 @@
+[submodule "audio-detect"]
+	path = audio-detect
+	url = https://github.com/craigfrancis/audio-detect.git
