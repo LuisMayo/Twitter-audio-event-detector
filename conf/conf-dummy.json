@@ -1,4 +1,5 @@
 {
     "apiKey": "DUMMY",
-    "apiSecret": "DUMMY"
+    "apiSecret": "DUMMY",
+    "audioDetectMessage": "DUMMY"
 }
