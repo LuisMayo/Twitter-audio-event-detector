@@ -1,3 +1,4 @@
 [submodule "audio-detect"]
 	path = audio-detect
 	url = https://github.com/LuisMayo/audio-detect.git
+	branch = simplified-cli-output
