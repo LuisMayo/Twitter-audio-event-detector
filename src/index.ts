@@ -75,9 +75,5 @@ app.get('/url/:url', function (req, res) {
   downloadAndProcessVideo(req.params.url, res);
 });
 
-app.listen(80, function () {
-  console.log('Example app listening on port 3000!');
-});
-
 httpServer.listen(80);
 httpsServer.listen(443);
