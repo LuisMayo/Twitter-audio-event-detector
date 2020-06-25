@@ -8,7 +8,6 @@ export class AudioEventPlugin implements MediaProcessorPlugin {
     }
 
     getDetection(fileName: string): Promise<boolean> {
-        return Promise.resolve(false);
         return new Promise((resolve, reject) => {
             let result: string;
             child_process.exec(`python3 ./process.py ./config.py ../${fileName};`, { cwd: 'audio-detect', encoding: 'ascii' }, (error, stdout, stderr) => {
