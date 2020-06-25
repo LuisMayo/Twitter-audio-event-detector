@@ -6,8 +6,13 @@ import Twitter from 'twitter';
 import wget from 'node-wget-promise';
 import { MediaProcessorPlugin } from './plugins/plugin.interface';
 import { AudioEventPlugin } from './plugins/audio-event';
+import http from 'http';
+import https from 'https';
 
 const config: Conf = JSON.parse(readFileSync('./conf/conf.json', { encoding: 'utf-8' }));
+const privateKey  = readFileSync(config.certificate.keyPath, 'utf8');
+const certificate = readFileSync(config.certificate.certPath, 'utf8');
+const credentials = {key: privateKey, cert: certificate};
 let client: Twitter;
 const plugins: MediaProcessorPlugin[] = [];
 
@@ -47,11 +52,13 @@ function downloadAndProcessVideo(url: string, res: express.Response<any>): void 
 }
 
 const app = express();
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
 
 app.get('/tweet/:id', function (req, res) {
   client.get('statuses/show/' + req.params.id, (error, data, response) => {
     if (error) {
-
+      
     } else {
       if (data.extended_entities && data.extended_entities && data.extended_entities.media && data.extended_entities.media.length > 0) {
         const firstMedia = data.extended_entities.media[0];
@@ -72,4 +79,5 @@ app.listen(80, function () {
   console.log('Example app listening on port 3000!');
 });
 
-
+httpServer.listen(80);
+httpsServer.listen(443);

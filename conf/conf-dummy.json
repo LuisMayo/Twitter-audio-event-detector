@@ -1,5 +1,9 @@
 {
     "apiKey": "DUMMY",
     "apiSecret": "DUMMY",
-    "audioDetectMessage": "DUMMY"
+    "audioDetectMessage": "DUMMY",
+    "certificate": {
+        "certPath": "./cer.pem",
+        "keyPath": "./key.pem"
+    }
 }
